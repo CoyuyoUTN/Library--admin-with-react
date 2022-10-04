@@ -14,7 +14,7 @@ const RegisterForm = () => {
         password: '',
     })    
 
-    function isEmailValid(email){
+/*     function isEmailValid(email){
         //Funcion de validacion basica de email con los metodos vistos hasta el momento en el SK de React.js
         const emailParts = email.split('@');
         //Verifico que el email tenga uno y solo un simbolo @    
@@ -34,12 +34,12 @@ const RegisterForm = () => {
                 }
             }
         }
-    }
+    } */
 
     const handleChange = (e) => {
         setNewUser({
             ...newUser,
-            [e.target.name]: e.target.value,
+            [e.target.name]: e.target.value.trim(),
         });
     };
 
