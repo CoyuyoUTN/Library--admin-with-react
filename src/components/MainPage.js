@@ -1,41 +1,26 @@
 import { Layout } from "antd";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import "../Styles/mainPage.css";
-
+import { useSelector } from "react-redux";
+import BookCard from "./BookCard";
 const { Header, Footer, Sider, Content } = Layout;
 
 const MainPage = () => {
-  const [books, setBooks] = useState([{}]);
-
-  const getBooksAxios = async () => {
-    const getAxios = await axios.get("./books.json").catch(function (error) {
-      if (error.response) {
-        console.log(error.response.data);
-        console.log(error.response.status);
-        console.log(error.response.headers);
-      } else if (error.request) {
-        console.log(error.request);
-      } else {
-        console.log("Error", error.message);
-      }
-      console.log(error.config);
-    });
-    setBooks(getAxios.data);
-  };
-
-  useEffect(() => {
-    getBooksAxios();
-  }, []);
-
-  console.log(books);
-
+  const bookList = useSelector((state) => state.books);
+  console.log("El state queda asi", bookList);
   return (
     <>
       <Layout>
         <Header className="space"></Header>
         <Content className="main-container">
-            
+          <div className="books-container">
+            {bookList.map((book, index) => {
+              return (
+                <div key={index} className="book">
+                  <BookCard book={book} />
+                </div>
+              );
+            })}
+          </div>
         </Content>
         <Footer className="space-2"></Footer>
       </Layout>

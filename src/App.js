@@ -4,12 +4,14 @@ import LoginForm from "./components/LoginForm";
 import MainPage from "./components/MainPage";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import CallJson from "./components/CallJson";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <NavBar />
+        <CallJson />
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/home" element={<MainPage />} />
