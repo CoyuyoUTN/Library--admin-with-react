@@ -2,7 +2,7 @@ import { Layout } from "antd";
 import "../Styles/mainPage.css";
 import { useSelector } from "react-redux";
 import BookCard from "./BookCard";
-const { Header, Footer, Sider, Content } = Layout;
+const { Content } = Layout;
 
 const MainPage = () => {
   const bookList = useSelector((state) => state.books);
@@ -10,19 +10,17 @@ const MainPage = () => {
   return (
     <>
       <Layout>
-        <Header className="space"></Header>
         <Content className="main-container">
           <div className="books-container">
             {bookList.map((book, index) => {
               return (
-                <div key={index} className="book">
+                <div key={index}>
                   <BookCard book={book} />
                 </div>
               );
             })}
           </div>
         </Content>
-        <Footer className="space-2"></Footer>
       </Layout>
     </>
   );

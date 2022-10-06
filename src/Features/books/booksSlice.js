@@ -9,10 +9,17 @@ const booksSlice = createSlice({
     addBook: (state, action) => {
       state.push(action.payload);
     },
+    deleteBook: (state, action) => {
+      const bookFound = state.find((book) => book.id === action.payload);
+
+      if (bookFound) {
+        state.splice(state.indexOf(bookFound), 1);
+      }
+    },
   },
 });
 
-export const { addBook } = booksSlice.actions;
+export const { addBook, deleteBook } = booksSlice.actions;
 
 export default booksSlice.reducer;
 /*o Título 
