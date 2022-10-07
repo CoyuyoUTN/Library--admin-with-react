@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <CallJson />
-
+        <NavBar />
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/home" element={<MainPage />} />
@@ -20,6 +20,7 @@ function App() {
           <Route path="/login/" element={<LoginForm />} />
           <Route path="/DetailBook/:id" element={<DetailBook />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
