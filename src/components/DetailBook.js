@@ -44,8 +44,13 @@ const DetailBook = () => {
       key={id}
       className="container h-100 d-flex justify-content-center detail-container"
     >
-      <Row className="align-items-end row-container">
-        <Col Col xs={6} md={6} className="justify-content-md-center img-container">
+      <Row className="align-items-end row-container  ">
+        <Col
+          Col
+          xs={6}
+          md={6}
+          className="justify-content-md-center img-container animate__animated animate__fadeInTopLeft"
+        >
           <img src={book.imageLink} className="detail-img" alt="" />
           <Button
             className="detail-button"
@@ -54,7 +59,11 @@ const DetailBook = () => {
             Delete
           </Button>
         </Col>
-        <Col xs={12} md={6} className="content-description">
+        <Col
+          xs={12}
+          md={6}
+          className="content-description animate__animated animate__fadeInRightBig"
+        >
           <h1 className="detail-title">{book.title}</h1>
           <p className="detail-description">{book.description}</p>
           <p className="detail-price">Price: ${book.price}</p>

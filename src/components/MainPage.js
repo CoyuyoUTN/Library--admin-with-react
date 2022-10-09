@@ -8,7 +8,7 @@ const { Content } = Layout;
 
 const MainPage = () => {
   const bookList = useSelector((state) => state.books);
-  console.log("El state queda asi", bookList);
+
   /*-----------------------------------------------------------------------------------*/
 
   return (

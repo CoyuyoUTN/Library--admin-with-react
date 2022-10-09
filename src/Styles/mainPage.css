@@ -6,6 +6,8 @@
     justify-content: center;
     background-image: url("../img/book.jpg");
     caret-color:transparent;
+    padding-top: 80px;
+    padding-bottom: 50px;
 }
 
 
