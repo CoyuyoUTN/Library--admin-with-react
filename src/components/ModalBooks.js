@@ -39,7 +39,7 @@ const ModalBooks = () => {
 
   const handleChange = (ev) => {
     const { name, value } = ev.target;
-    setBook({ ...book, [name]: value.trim });
+    setBook({ ...book, [name]: value });
   };
   const action = () => {
     console.log("aca hay un libro", book);
