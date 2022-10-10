@@ -1,0 +1,35 @@
+.main-container{
+    min-height: 100vh;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../img/book.jpg");
+    caret-color:transparent;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+
+
+.books-container{
+      margin-top: 56px;
+      min-height:100vh ;
+      max-width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .btn-main{
+      height: 100px;
+      width: 100px;
+      background-color: white;
+      border: 3px solid black;
+      margin-left: 50px;
+      margin-top: 100px;
+    }
+
