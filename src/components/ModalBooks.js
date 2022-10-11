@@ -2,6 +2,7 @@ import { Button, Modal, Form, Input } from "antd";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addBook } from "../Features/books/booksSlice";
+import { v4 as uuid } from "uuid";
 const { confirm } = Modal;
 const { Item } = Form;
 const { TextArea } = Input;
@@ -9,11 +10,12 @@ const { TextArea } = Input;
 const ModalBooks = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [book, setBook] = useState({
-    id: 11,
+    id: uuid(),
     author: "",
     title: "",
     imageLink: "",
     year: 0,
+    price: 0,
     description: "",
   });
   const showModal = () => {
@@ -79,6 +81,9 @@ const ModalBooks = () => {
           </Item>
           <Item label="Year">
             <Input name="year" onChange={handleChange} />
+          </Item>
+          <Item label="Price">
+            <Input name="price" onChange={handleChange} />
           </Item>
           <Item label="Description">
             <TextArea rows={4} name="description" onChange={handleChange} />

@@ -128,4 +128,56 @@
     "year": 1884,
     "description": "Just do it! Its the best book i have ever seen",
     "price": 222
+  },
+  {
+    "id":11,
+    "author": "Walt Whitman",
+    "country": "United States",
+    "imageLink": "https://whitmanarchive.org/published/LG/figures/ppp.00473.001.jpg",
+    "language": "English",
+    "link": "https://en.wikipedia.org/wiki/Leaves_of_Grass\n",
+    "pages": 152,
+    "title": "Leaves of Grass",
+    "description": "Just do it! Its the best book i have ever seen",
+    "year": 1855,
+    "price": 177
+  },
+  {
+    "id":12,
+    "author": "Virginia Woolf",
+    "country": "United Kingdom",
+    "imageLink": "https://m.media-amazon.com/images/I/5163yZCghHL.jpg",
+    "language": "English",
+    "link": "https://en.wikipedia.org/wiki/Mrs_Dalloway\n",
+    "pages": 216,
+    "title": "Mrs Dalloway",
+    "description": "Just do it! Its the best book i have ever seen",
+    "year": 1925,
+    "price": 350
+  },
+  {
+    "id":13,
+    "author": "Virginia Woolf",
+    "country": "United Kingdom",
+    "imageLink": "https://m.media-amazon.com/images/M/MV5BNzYyMTgwNTAtNWUzMS00MDhiLTgyOWMtNzE1MzYwMDAyNDNhXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg",
+    "language": "English",
+    "link": "https://en.wikipedia.org/wiki/To_the_Lighthouse\n",
+    "pages": 209,
+    "title": "To the Lighthouse",
+    "description": "Just do it! Its the best book i have ever seen",
+    "year": 1927,
+    "price": 420
+  },
+  {
+    "id":14,
+    "author": "Marguerite Yourcenar",
+    "country": "France/Belgium",
+    "imageLink": "https://cdn2.penguin.com.au/covers/original/9780141184968.jpg",
+    "language": "French",
+    "link": "https://en.wikipedia.org/wiki/Memoirs_of_Hadrian\n",
+    "pages": 408,
+    "title": "Memoirs of Hadrian",
+    "description": "Just do it! Its the best book i have ever seen",
+    "year": 1951,
+    "price": 510
   }]

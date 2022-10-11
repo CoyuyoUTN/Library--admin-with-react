@@ -10,6 +10,7 @@ import { Button } from "antd";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import UpdateBook from "./UpdateBook";
 
 const DetailBook = () => {
   const [book, setBook] = useState({
@@ -57,6 +58,7 @@ const DetailBook = () => {
           >
             Delete
           </Button>
+          <UpdateBook />
         </Col>
         <Col
           xs={12}
