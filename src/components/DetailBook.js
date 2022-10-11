@@ -46,7 +46,6 @@ const DetailBook = () => {
     >
       <Row className="align-items-end row-container  ">
         <Col
-          Col
           xs={6}
           md={6}
           className="justify-content-md-center img-container animate__animated animate__fadeInTopLeft"
