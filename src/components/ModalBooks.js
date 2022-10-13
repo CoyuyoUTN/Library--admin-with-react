@@ -1,0 +1,152 @@
+import { Button, Modal, Form, Input, InputNumber, DatePicker } from "antd";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addBook } from "../Features/books/booksSlice";
+import { v4 as uuid } from "uuid";
+const { confirm } = Modal;
+const { Item } = Form;
+const { TextArea } = Input;
+
+const ModalBooks = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [book, setBook] = useState({
+    id: uuid(),
+    author: "",
+    title: "",
+    imageLink: "",
+    year: "00/00/00",
+    price: 0,
+    description: "",
+  });
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+  const layout = {
+    labelCol: {
+      span: 5,
+    },
+    wrapperCol: {
+      span: 16,
+    },
+  };
+
+  const validations = (book) => {
+    if (
+      !book.title ||
+      !book.author ||
+      !book.imageLink ||
+      !book.year ||
+      !book.price ||
+      !book.description
+    ) {
+      alert("Por favor ingresar todos los datos");
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleChange = (ev) => {
+    const { name, value } = ev.target;
+    setBook({ ...book, [name]: value });
+  };
+  const action = () => {
+    console.log("aqui validacion", book);
+    /*const valid = validations(book);
+    if (!valid) {
+      return false;
+    }*/
+    dispatch(addBook(book));
+    handleCancel();
+  };
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+    action();
+  };
+
+  return (
+    <>
+      <Button type="primary" onClick={showModal} className="btn-main">
+        Add Book
+      </Button>
+      <Modal
+        title="Add Book"
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        footer={[<Button onClick={handleCancel}>Cancelar</Button>]}
+        centered
+      >
+        <div className="center">
+          <form onSubmit={handleSubmit}>
+            <div className="inputbox">
+              <input
+                type="text"
+                name="title"
+                placeholder="Title"
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="inputbox">
+              <input
+                type="text"
+                name="imageLink"
+                placeholder="imageLink"
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="inputbox">
+              <input
+                type="text"
+                name="author"
+                placeholder="Author"
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="inputbox">
+              <input
+                type="date"
+                name="year"
+                placeholder="Year"
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="inputbox">
+              <input
+                type="number"
+                name="price"
+                placeholder="Price"
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="inputbox">
+              <textarea name="description" onChange={handleChange}></textarea>
+            </div>
+            <div className="inputbox">
+              <button type="submit">Add</button>
+            </div>
+          </form>
+        </div>
+      </Modal>
+    </>
+  );
+};
+
+export default ModalBooks;

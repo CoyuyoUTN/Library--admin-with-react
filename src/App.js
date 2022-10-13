@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import CallJson from "./components/CallJson";
 import DetailBook from "./components/DetailBook";
+import "antd/dist/antd.css";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/register/" element={<RegisterForm />} />
           <Route path="/login/" element={<LoginForm />} />
           <Route path="/DetailBook/:id" element={<DetailBook />} />
+          <Route path="*" element={<MainPage />} />
         </Routes>
         <Footer />
       </div>
