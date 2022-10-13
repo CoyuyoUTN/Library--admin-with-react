@@ -8,13 +8,13 @@ const { Content } = Layout;
 
 const MainPage = () => {
   const bookList = useSelector((state) => state.books);
-
+  const sysInfo = useSelector((state) => state.sysConfig);
   /*-----------------------------------------------------------------------------------*/
 
   return (
     <Layout>
       <Content className="main-container">
-        <ModalBooks />
+        {sysInfo.logued && <ModalBooks />}
         <div className="books-container">
           {bookList.map((book, index) => {
             return (
