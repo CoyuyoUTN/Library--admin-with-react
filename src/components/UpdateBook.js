@@ -67,8 +67,8 @@ const UpdateBook = () => {
 
   return (
     <>
-      <Button type="primary" onClick={showModal} className="btn-main">
-        Update Book
+      <Button type="primary" onClick={showModal}>
+        Edit book
       </Button>
       <Modal
         title="Update Book"

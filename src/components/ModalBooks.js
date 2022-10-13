@@ -1,4 +1,4 @@
-import { Button, Modal, Form, Input } from "antd";
+import { Button, Modal, Form, Input, InputNumber, DatePicker } from "antd";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addBook } from "../Features/books/booksSlice";
@@ -14,7 +14,7 @@ const ModalBooks = () => {
     author: "",
     title: "",
     imageLink: "",
-    year: 0,
+    year: "00/00/00",
     price: 0,
     description: "",
   });
@@ -39,17 +39,42 @@ const ModalBooks = () => {
     },
   };
 
+  const validations = (book) => {
+    if (
+      !book.title ||
+      !book.author ||
+      !book.imageLink ||
+      !book.year ||
+      !book.price ||
+      !book.description
+    ) {
+      alert("Por favor ingresar todos los datos");
+      return false;
+    }
+
+    return true;
+  };
+
   const handleChange = (ev) => {
     const { name, value } = ev.target;
     setBook({ ...book, [name]: value });
   };
   const action = () => {
-    console.log("aca hay un libro", book);
+    console.log("aqui validacion", book);
+    /*const valid = validations(book);
+    if (!valid) {
+      return false;
+    }*/
     dispatch(addBook(book));
     handleCancel();
   };
 
   const dispatch = useDispatch();
+
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+    action();
+  };
 
   return (
     <>
@@ -61,34 +86,64 @@ const ModalBooks = () => {
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
-        footer={[
-          <Button onClick={handleCancel}>Cancelar</Button>,
-          <Button type="primary" onClick={() => action()}>
-            Enviar
-          </Button>,
-        ]}
+        footer={[<Button onClick={handleCancel}>Cancelar</Button>]}
         centered
       >
-        <Form {...layout}>
-          <Item label="Title">
-            <Input name="title" onChange={handleChange} required />
-          </Item>
-          <Item label="Image">
-            <Input name="imageLink" onChange={handleChange} />
-          </Item>
-          <Item label="Author">
-            <Input name="author" onChange={handleChange} />
-          </Item>
-          <Item label="Year">
-            <Input name="year" onChange={handleChange} />
-          </Item>
-          <Item label="Price">
-            <Input name="price" onChange={handleChange} />
-          </Item>
-          <Item label="Description">
-            <TextArea rows={4} name="description" onChange={handleChange} />
-          </Item>
-        </Form>
+        <div className="center">
+          <form onSubmit={handleSubmit}>
+            <div className="inputbox">
+              <input
+                type="text"
+                name="title"
+                placeholder="Title"
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="inputbox">
+              <input
+                type="text"
+                name="imageLink"
+                placeholder="imageLink"
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="inputbox">
+              <input
+                type="text"
+                name="author"
+                placeholder="Author"
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="inputbox">
+              <input
+                type="date"
+                name="year"
+                placeholder="Year"
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="inputbox">
+              <input
+                type="number"
+                name="price"
+                placeholder="Price"
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="inputbox">
+              <textarea name="description" onChange={handleChange}></textarea>
+            </div>
+            <div className="inputbox">
+              <button type="submit">Add</button>
+            </div>
+          </form>
+        </div>
       </Modal>
     </>
   );

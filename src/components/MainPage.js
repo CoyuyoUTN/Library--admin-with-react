@@ -12,22 +12,20 @@ const MainPage = () => {
   /*-----------------------------------------------------------------------------------*/
 
   return (
-    <>
-      <Layout>
-        <Content className="main-container">
-          <ModalBooks />
-          <div className="books-container">
-            {bookList.map((book, index) => {
-              return (
-                <div key={index}>
-                  <BookCard book={book} />
-                </div>
-              );
-            })}
-          </div>
-        </Content>
-      </Layout>
-    </>
+    <Layout>
+      <Content className="main-container">
+        <ModalBooks />
+        <div className="books-container">
+          {bookList.map((book, index) => {
+            return (
+              <div key={index}>
+                <BookCard book={book} />
+              </div>
+            );
+          })}
+        </div>
+      </Content>
+    </Layout>
   );
 };
 

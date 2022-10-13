@@ -16,6 +16,9 @@ const DetailBook = () => {
   const [book, setBook] = useState({
     title: "",
     description: "",
+    price: 0,
+    imageLink: "",
+    id: "",
   });
   const notify = () => {
     toast("Book was deleted successfully");
@@ -35,9 +38,13 @@ const DetailBook = () => {
 
   useEffect(() => {
     if (id) {
-      setBook(books.find((book) => book.id == id));
+      const bookFound = books.find((book) => book.id == id);
+      if (bookFound) {
+        setBook(books.find((book) => book.id == id));
+        console.log("book", book);
+      }
     }
-  }, [id]);
+  }, [id, books]);
 
   return (
     <Container
