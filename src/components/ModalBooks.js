@@ -137,10 +137,20 @@ const ModalBooks = () => {
               />
             </div>
             <div className="inputbox">
-              <textarea name="description" onChange={handleChange}></textarea>
+              <textarea
+                name="description"
+                placeholder="Description"
+                rows={2}
+                cols={35}
+                maxlength={100}
+                onChange={handleChange}
+              />
             </div>
             <div className="inputbox">
               <button type="submit">Add</button>
+            </div>
+            <div className="inputbox bl">
+              <button type="reset">Clear</button>
             </div>
           </form>
         </div>

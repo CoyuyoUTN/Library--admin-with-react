@@ -40,10 +40,14 @@
       align-items: center;
       min-width: 20%;
       min-height: 35%;
-      background: #fff;
+      background-image: url("https://images.all-free-download.com/images/graphiclarge/blank_book_311778.jpg");
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: cover; /* Resize the background image to cover the entire container */
       border-radius: 10px;
       box-sizing: border-box;
-      padding: 5px;
+      padding: 20px;
+      border: 3px dashed rgb(17, 0, 60);
     }
 
     .center .inputbox {
@@ -51,6 +55,15 @@
       width: 250px;
       height: 50px;
       margin-bottom: 20px;
+    }
+    textarea, input::placeholder{
+      color: rgb(48, 46, 46);
+      font-weight: 500;
+    }
+
+    textarea, input{
+      color: #000;
+      font-weight: 500;
     }
     .center .inputbox input {
       position: absolute;
@@ -82,10 +95,26 @@
     
     .center .inputbox [type="submit"] {
       width: 50%;
-      background: dodgerblue;
+      background: rgb(42, 44, 45);
       color: #fff;
       border: #fff;
     }
     .center .inputbox:hover [type="submit"] {
-      background: linear-gradient(45deg, greenyellow, dodgerblue);
+      background: linear-gradient(45deg, rgb(228, 230, 225), rgb(0, 20, 41));
+    }
+
+
+    .inputbox [type="reset"]{
+      width: 50%;
+      background: rgb(42, 44, 45);
+      color: #fff;
+      border: #fff;
+    }
+
+    .inputbox:hover [type="reset"] {
+      background: linear-gradient(45deg, rgb(228, 230, 225), rgb(0, 20, 41));
+    }
+
+    .bl{
+      margin-top: -30px;
     }
