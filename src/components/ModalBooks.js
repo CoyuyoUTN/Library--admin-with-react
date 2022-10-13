@@ -1,11 +1,9 @@
-import { Button, Modal, Form, Input, InputNumber, DatePicker } from "antd";
+import { Button, Modal } from "antd";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addBook } from "../Features/books/booksSlice";
 import { v4 as uuid } from "uuid";
 const { confirm } = Modal;
-const { Item } = Form;
-const { TextArea } = Input;
 
 const ModalBooks = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,22 +35,6 @@ const ModalBooks = () => {
     wrapperCol: {
       span: 16,
     },
-  };
-
-  const validations = (book) => {
-    if (
-      !book.title ||
-      !book.author ||
-      !book.imageLink ||
-      !book.year ||
-      !book.price ||
-      !book.description
-    ) {
-      alert("Por favor ingresar todos los datos");
-      return false;
-    }
-
-    return true;
   };
 
   const handleChange = (ev) => {
@@ -93,9 +75,11 @@ const ModalBooks = () => {
           <form onSubmit={handleSubmit}>
             <div className="inputbox">
               <input
+                id="title"
                 type="text"
                 name="title"
                 placeholder="Title"
+                maxlength={60}
                 onChange={handleChange}
                 required
               />
@@ -114,6 +98,7 @@ const ModalBooks = () => {
                 type="text"
                 name="author"
                 placeholder="Author"
+                maxlength={30}
                 onChange={handleChange}
                 required
               />
@@ -132,15 +117,26 @@ const ModalBooks = () => {
                 type="number"
                 name="price"
                 placeholder="Price"
+                max={100000}
                 onChange={handleChange}
                 required
               />
             </div>
             <div className="inputbox">
-              <textarea name="description" onChange={handleChange}></textarea>
+              <textarea
+                name="description"
+                placeholder="Description"
+                rows={2}
+                cols={35}
+                maxlength={100}
+                onChange={handleChange}
+              />
             </div>
             <div className="inputbox">
               <button type="submit">Add</button>
+            </div>
+            <div className="inputbox bl">
+              <button type="reset">Clear</button>
             </div>
           </form>
         </div>
