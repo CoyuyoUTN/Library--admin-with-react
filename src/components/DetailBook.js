@@ -11,6 +11,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import UpdateBook from "./UpdateBook";
+import CallJson from "./CallJson";
 
 const DetailBook = () => {
   const [book, setBook] = useState({
@@ -28,6 +29,7 @@ const DetailBook = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
+  console.log("params", id);
 
   const handleDelete = (id) => {
     dispatch(deleteBook(id));
@@ -53,6 +55,7 @@ const DetailBook = () => {
       key={id}
       className="container h-100 d-flex justify-content-center detail-container"
     >
+      <CallJson />
       <Row className="align-items-end row-container  ">
         <Col
           xs={6}

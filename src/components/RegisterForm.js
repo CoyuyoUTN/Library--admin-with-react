@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { addUser } from "../Features/users/usersSlice";
 import { useDispatch } from "react-redux";
 import { v4 as newUUID } from 'uuid';
+import { Button, Modal, Form, Input } from "antd";
 
 const RegisterForm = () => {    
 
@@ -13,28 +14,29 @@ const RegisterForm = () => {
         email:'',
         password: '',
     })    
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-/*     function isEmailValid(email){
-        //Funcion de validacion basica de email con los metodos vistos hasta el momento en el SK de React.js
-        const emailParts = email.split('@');
-        //Verifico que el email tenga uno y solo un simbolo @    
-        if(emailParts.length !== 2){
-            return false;
-        }else{
-            const domainParts = emailParts[1].split('.');
-            //verifico que despues del @ esten el dominio y la extension
-            if(domainParts.length <2){
-                return false;
-            }else{
-                //Verifico que no sean vacios ni el usuario, ni el dominio, ni la extension
-                if((emailParts[0].length > 0) && (domainParts[0].length >0) && (domainParts[1].length >0)){
-                    return true;
-                }else{
-                    return false;
-                }
-            }
-        }
-    } */
+    const showModal = () => {
+        setIsModalOpen(true);
+      };
+    
+      const handleOk = () => {
+        setIsModalOpen(false);
+      };
+    
+      const handleCancel = () => {
+        setIsModalOpen(false);
+      };
+    
+      const layout = {
+        labelCol: {
+          span: 5,
+        },
+        wrapperCol: {
+          span: 16,
+        },
+      };
+
 
     const handleChange = (e) => {
         setNewUser({
@@ -64,6 +66,20 @@ const RegisterForm = () => {
     }
 
     return(
+        <>
+        <Button type="primary" onClick={showModal}>
+          Register
+        </Button>
+        <Modal
+          title="Register"
+          open={isModalOpen}
+          onOk={handleOk}
+          onCancel={handleCancel}
+          footer={[      
+            <Button onClick={handleCancel}>Cancelar</Button>,      
+          ]}
+          centered
+        >          
         <div className="container mt-5 pt-4">
             <form onSubmit={handleSubmit} name="registerForm" id="registerForm">
             <div className="form-group">
@@ -82,6 +98,8 @@ const RegisterForm = () => {
             <button type="submit" className="btn btn-primary">Submit</button>
             </form>       
         </div>
+        </Modal>
+    </>         
     );
 
 }

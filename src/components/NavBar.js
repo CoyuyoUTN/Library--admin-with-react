@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import { Button, Modal, Form, Input } from "antd";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
+
 const { confirm } = Modal;
 const { Item } = Form;
 
@@ -40,12 +43,8 @@ const NavBar = () => {
                 )
               :
                 (<Nav> 
-                <Link to={"/login"} className="nav-link">
-                    Login
-                  </Link>
-                  <Link to={"/register"} className="nav-link">
-                    Register
-                  </Link>  
+                  <LoginForm />
+                  <RegisterForm />
                 </Nav> )  
               }
             

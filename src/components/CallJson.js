@@ -7,7 +7,7 @@ const CallJson = () => {
   const dispatch = useDispatch();
 
   const getBooksAxios = async () => {
-    const getAxios = await axios.get("./books.json").catch(function (error) {
+    const getAxios = await axios.get("/books.json").catch(function (error) {
       if (error.response) {
         console.log(error.response.data);
         console.log(error.response.status);
