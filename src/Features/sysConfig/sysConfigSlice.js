@@ -21,11 +21,16 @@ const sysConfigSlice = createSlice({
       state.userName = action.payload.name;
       state.logued = true;
     },
+    logout: (state, action) => {
+      state.userId = "";
+      state.userName = "";
+      state.logued = false;
+    },    
 
 
   },
 });
 
-export const {changeLanguage, login} = sysConfigSlice.actions;
+export const {changeLanguage, login, logout} = sysConfigSlice.actions;
 
 export default sysConfigSlice.reducer;

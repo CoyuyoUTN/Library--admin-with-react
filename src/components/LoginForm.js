@@ -45,7 +45,7 @@ const LoginForm = () => {
     }
 
     return(
-        <div className="container">
+        <div className="container mt-5 pt-4">
             <form onSubmit={handleSubmit} name="LoginForm" id="LoginForm">      
             <div className="form-group">
                 <label htmlFor="exampleInputEmail1">Email address</label>

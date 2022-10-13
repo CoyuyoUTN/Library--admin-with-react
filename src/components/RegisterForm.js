@@ -64,7 +64,7 @@ const RegisterForm = () => {
     }
 
     return(
-        <div className="container">
+        <div className="container mt-5 pt-4">
             <form onSubmit={handleSubmit} name="registerForm" id="registerForm">
             <div className="form-group">
                 <label htmlFor="InputName">Name</label>

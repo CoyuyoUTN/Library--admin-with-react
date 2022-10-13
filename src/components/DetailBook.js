@@ -24,6 +24,7 @@ const DetailBook = () => {
     toast("Book was deleted successfully");
   };
   const books = useSelector((state) => state.books);
+  const sysInfo = useSelector((state) => state.sysConfig);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
@@ -59,13 +60,18 @@ const DetailBook = () => {
           className="justify-content-md-center img-container animate__animated animate__fadeInTopLeft"
         >
           <img src={book.imageLink} className="detail-img" alt="" />
-          <Button
-            className="detail-button"
-            onClick={() => handleDelete(book.id)}
-          >
-            Delete
-          </Button>
-          <UpdateBook />
+          {sysInfo.logued && 
+            <>
+              <Button
+                className="detail-button"
+                onClick={() => handleDelete(book.id)}
+              >
+                Delete
+              </Button>
+              <UpdateBook />
+            </>  
+          }
+          
         </Col>
         <Col
           xs={12}
