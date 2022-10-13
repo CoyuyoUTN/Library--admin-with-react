@@ -8,7 +8,7 @@ const booksSlice = createSlice({
   reducers: {
     addBook: (state, action) => {
       state.push(action.payload);
-    },
+    }, 
     deleteBook: (state, action) => {
       const bookFound = state.find((book) => book.id === action.payload);
 
