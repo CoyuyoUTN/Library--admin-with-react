@@ -34,7 +34,7 @@ const CallJson = () => {
       await getBooksAxios();
     }
     getBooksUseEffect();
-  }, []);
+  }, [books]);
 
   console.log("aca se está llamando", books);
   return <></>;
