@@ -7,11 +7,10 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
+import Logout from "./Logout";
 
 const { confirm } = Modal;
 const { Item } = Form;
-
-
 
 const NavBar = () => {
   const sysInfo = useSelector((state) => state.sysConfig);
@@ -35,9 +34,7 @@ const NavBar = () => {
                   Signed in as: {sysInfo.userName} /
                 </Navbar.Text>
                 <Nav> 
-                <Link to={"/logout"} className="nav-link">
-                    Logout
-                </Link>
+                <Logout />
 
                 </Nav></> 
                 )
