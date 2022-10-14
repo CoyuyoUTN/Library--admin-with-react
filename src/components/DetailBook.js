@@ -63,7 +63,7 @@ const DetailBook = () => {
           className="justify-content-md-center img-container animate__animated animate__fadeInTopLeft"
         >
           <img src={book.imageLink} className="detail-img" alt="" />
-          {sysInfo.logued && 
+          {sysInfo.logued && (
             <>
               <Button
                 className="detail-button"
@@ -72,9 +72,8 @@ const DetailBook = () => {
                 Delete
               </Button>
               <UpdateBook />
-            </>  
-          }
-          
+            </>
+          )}
         </Col>
         <Col
           xs={12}
