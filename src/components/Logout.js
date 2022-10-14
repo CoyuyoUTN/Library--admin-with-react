@@ -1,6 +1,7 @@
-import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { logout } from "../Features/sysConfig/sysConfigSlice";
+import { Button } from "antd";
+import { toast } from "react-toastify";
 
 const Logout = () => {
 
@@ -10,11 +11,11 @@ const Logout = () => {
         dispatch(
             logout()
         );    
-        alert('Logged out succesfully');
+        toast("Logged Out successfully!");
     }    
 
-    return(
-        <button onClick={doLogout}>Logout</button>
+    return(   
+        <Button type="primary" onClick={doLogout}>Logout</Button>
     )
 }
 

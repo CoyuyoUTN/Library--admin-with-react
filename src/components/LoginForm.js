@@ -46,7 +46,7 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     var result = users.find((findUser) => findUser.email === user.email);
 
-    if (result && result.email === user.email) {
+    if (result && (result.password == user.password) ) {
       dispatch(
         login({
           name: result.name,
