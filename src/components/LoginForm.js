@@ -54,6 +54,7 @@ const LoginForm = () => {
         })
       );
       notifySuccess();
+      handleCancel();
     } else {
       notifyfailed();
     }
