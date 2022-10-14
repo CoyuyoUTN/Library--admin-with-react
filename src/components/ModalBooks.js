@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addBook } from "../Features/books/booksSlice";
 import { v4 as uuid } from "uuid";
-const { confirm } = Modal;
+
 
 const ModalBooks = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,14 +28,6 @@ const ModalBooks = () => {
     setIsModalOpen(false);
   };
 
-  const layout = {
-    labelCol: {
-      span: 5,
-    },
-    wrapperCol: {
-      span: 16,
-    },
-  };
 
   const handleChange = (ev) => {
     const { name, value } = ev.target;
@@ -43,10 +35,7 @@ const ModalBooks = () => {
   };
   const action = () => {
     console.log("aqui validacion", book);
-    /*const valid = validations(book);
-    if (!valid) {
-      return false;
-    }*/
+  
     dispatch(addBook(book));
     handleCancel();
   };

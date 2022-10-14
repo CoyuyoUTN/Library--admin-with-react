@@ -6,9 +6,11 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import CallJson from "./components/CallJson";
 import DetailBook from "./components/DetailBook";
+
 import "antd/dist/antd.css";
 
 function App() {
+
   return (
     <BrowserRouter>
       <div className="App">
