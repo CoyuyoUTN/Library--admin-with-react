@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addBook } from "../Features/books/booksSlice";
@@ -34,7 +34,7 @@ const CallJson = () => {
       await getBooksAxios();
     }
     getBooksUseEffect();
-  }, []);
+  }, [books]);
 
   console.log("aca se está llamando", books);
   return <></>;
