@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Library app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## CheackPoint 3 - SkillFactory React
 
-## Available Scripts
+## How to start?
 
-In the project directory, you can run:
+Open the console and put the following comands in an empty file.
 
-### `npm start`
+First
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```sh
+git clone https://github.com/CoyuyoUTN/Library--admin-with-react
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Second
 
-### `npm test`
+```sh
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Third:
 
-### `npm run build`
+```sh
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## About this project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The objective of this application is to be able to view books by simulating a bookstore. With access to the essential characteristics of any book and the price of these.
+To access the CRUD you must register a user through the REGISTER option in the nav and then log in through the LOG IN option located there.
+With this you will be able to visualize the ADD BOOK option located in the main page and the EDIT BOOK - DELETE BOOK options located in the details page of each book.
+Once this is done you will be able to log out in the LOG OUT option also located in the nav.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+###User for defect
 
-### `npm run eject`
+User: admin@admin.com
+Password: admin
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![MainPage](https://user-images.githubusercontent.com/23712018/196056026-97545a25-c955-41ff-9b27-246cfa74fe58.jpg)
+![Sin títuloMainwithLogin](https://user-images.githubusercontent.com/23712018/196056032-d83d64bb-fbc0-4b8b-9d63-67b21cd8b1d2.jpg)
+![DetailPage](https://user-images.githubusercontent.com/23712018/196056035-ce499a76-05bc-49ab-a01b-7fcc0bce67be.jpg)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##DEVS
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Gonzalo Herrero
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Guillermo Scharf
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Nicolas Golmar
