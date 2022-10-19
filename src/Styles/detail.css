@@ -11,6 +11,8 @@
      background-position: center;
      background-size: cover;
      color: white !important;
+     text-align: center;
+     margin: auto;
 }
 
 .row-container{
@@ -49,6 +51,7 @@
     font-size: 40px;
     width: 200px;
     padding-top: 60px;
+    color: white !important;
 }
 
 .img-container{
@@ -78,4 +81,21 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
+}
+
+@media (max-width: 450px) {
+    .detail-title{
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 300;
+        font-size: 60px;
+        word-wrap: break-word;
+        word-break: break-all;
+         color: white !important;
+    }
+
+    .detail-img{
+        height: 380px;
+        width: 260px;
+        margin:auto;
+    }
 }

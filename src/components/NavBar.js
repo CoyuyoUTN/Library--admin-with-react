@@ -14,7 +14,11 @@ const NavBar = () => {
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">LIBRARY!</Navbar.Brand>
+          <Navbar.Brand>
+            <Link to={"/home"} className="nav-link">
+              LIBRARY!
+            </Link>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
