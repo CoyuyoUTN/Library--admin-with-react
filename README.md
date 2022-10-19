@@ -43,7 +43,7 @@ Password: admin
 
 ##DEPLOY
 
-https://634cdbf6d81dce16652fa10f--exquisite-croquembouche-e0d734.netlify.app/
+https://exquisite-croquembouche-e0d734.netlify.app/
 
 ##DEVS
 
