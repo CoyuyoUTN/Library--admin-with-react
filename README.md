@@ -43,7 +43,7 @@ Password: admin
 
 ##DEPLOY
 
-https://exquisite-croquembouche-e0d734.netlify.app/
+https://library-react-avalith.netlify.app/
 
 ##DEVS
 
